@@ -8,7 +8,7 @@ dotEnv.config({ path: "./config/config.env" });
 const app = express();
 
 //bootcamp route
-app.use("api/v1/bootcamps", bootCamp);
+app.use("/api/v1/bootcamps", bootCamp);
 
 const port = process.env.PORT || 5000;
 app.listen(port, error => {
@@ -16,5 +16,5 @@ app.listen(port, error => {
     console.log(error);
     return;
   }
-  console.log("server started");
+  console.log("server started" + port);
 });

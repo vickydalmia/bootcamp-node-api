@@ -1,4 +1,8 @@
-exports.getAll = (req, res, next) => {
+const bootcampService = require("../services/bootcamp");
+exports.getAll = async (req, res, next) => {
+  console.log(req.body);
+  const bootcamp = await bootcampService.createBootCamp(req.body);
+  console.log(bootcamp);
   res.status(200).json({ name: "bootcamp" });
 };
 
@@ -14,6 +18,9 @@ exports.deleteOne = (req, res, next) => {
   res.status(200).json({ id: `${req.params.id}` });
 };
 
-exports.create = (req, res, next) => {
-  res.status(200).json({ name: "created" });
+exports.create = async (req, res, next) => {
+  console.log(req.body);
+  const bootcamp = await bootcampService.createBootCamp(req.body);
+  console.log(bootcamp);
+  res.status(200).json({ name: "bootcamp" });
 };

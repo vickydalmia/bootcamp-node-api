@@ -1,3 +1,5 @@
+const dotEnv = require("dotenv");
+dotEnv.config({ path: "./config/config.env" });
 module.exports = {
   development: {
     username: process.env.USERNAME,
